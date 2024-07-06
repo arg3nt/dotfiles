@@ -12,3 +12,5 @@ config checkout
 
 config config status.showUntrackedFiles no
 
+chsh -s $(which zsh)
+
