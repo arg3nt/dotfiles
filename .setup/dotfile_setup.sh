@@ -10,6 +10,8 @@ function config {
 
 config checkout
 
+config submodule update --init --recursive
+
 config config status.showUntrackedFiles no
 
 chsh -s $(which zsh)
