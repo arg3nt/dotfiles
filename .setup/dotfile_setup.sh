@@ -24,6 +24,7 @@ chsh -s $(which zsh) $(whoami)
 # Setup fbterm
 
 echo -e "#!/usr/bin/sh\nfbterm -- /usr/bin/sh -c \"TERM=fbterm login -p\"" | sudo tee /usr/sbin/fbterm-login
+sudo chmod +x /usr/sbin/fbterm-login
 
 sudo sed -i 's/^ExecStart=-\/sbin\/agetty -o .*\$TERM$/ExecStart=-\/sbin\/agetty --noclear -n -l \/usr\/sbin\/fbterm-login %I \$TERM/g' \
     /usr/lib/systemd/system/getty@.service
