@@ -29,3 +29,4 @@ call plug#end()
 set background=dark
 
 colorscheme jellybeans
+
