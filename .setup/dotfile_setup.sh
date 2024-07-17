@@ -2,9 +2,10 @@
 
 set -e
 
+# The following has been tested on Ubuntu 24.04 Server
 sudo apt install -y zsh fbterm
 
-git clone --bare --recurse-submodules git@github.com:arg3nt/dotfiles.git $HOME/.cfg
+git clone --bare --recurse-submodules https://github.com/arg3nt/dotfiles.git $HOME/.cfg
 
 function config {
   /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
@@ -18,7 +19,7 @@ config config status.showUntrackedFiles no
 
 vim -c ':PlugInstall' -c ':qa'
 
-chsh -s $(which zsh)
+chsh -s $(which zsh) $(whoami)
 
 # Setup fbterm
 
